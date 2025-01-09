@@ -1,6 +1,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: bisque;
+    margin: 0;
+    overflow: hidden;
 }
 
 body .h1 {
@@ -15,9 +17,11 @@ body .h1 {
     background-color: yellow;
     border-radius: 50%;
     position: absolute;
-    transition: opacity 2s ease-in-out;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
     border: 4px solid black;
-    animation: move 15s infinite linear;
+    animation: move 10s infinite linear;
 }
 
 #eyes #eye1 {
@@ -85,24 +89,23 @@ body .h1 {
 
 @keyframes move {
     0% {
-        transform: translateX(-1%) rotateZ(0deg);
+        transform: translateX(0vw) rotate(0deg);
         background-color: yellow;
     }
     25% {
+        transform: translateX(25vw) rotate(90deg);
         background-color: red;
     }
     50% {
+        transform: translateX(50vw) rotate(180deg);
         background-color: green;
     }
     75% {
+        transform: translateX(75vw) rotate(270deg);
         background-color: blue;
     }
     100% {
-        transform: translateX(970%) rotateZ(360deg);
+        transform: translateX(100vw) rotate(360deg);
         background-color: yellow;
     }
-}
-
-#face:hover {
-    animation: move 15s infinite linear;
 }
